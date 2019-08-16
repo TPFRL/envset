@@ -17,6 +17,8 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'morhetz/gruvbox'
 Plug 'kien/ctrlp.vim'
 Plug 'tczengming/headerGatesAdd.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 "" the relevant modules (add to plug-section if you already have one)
 "Plug 'roxma/nvim-yarp'
 "Plug 'ncm2/ncm2'
@@ -174,3 +176,7 @@ hi Search ctermbg=White ctermfg=Black
 set background=dark
 colorscheme gruvbox
 let g:gruvbox_contrast_dark="hard"
+
+"fzf관련
+nmap <C-p> :Files<Cr>
+nmap <C-g> :Ag<Cr>
