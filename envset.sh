@@ -4,13 +4,6 @@
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
-#install autojump
-git clone git://github.com/wting/autojump.git
-cd autojump
-./install.py
-cd ..
-echo "plugins=(autojump)" >> ${ZDOTDIR:-$HOME}/.zshrc
-	
 #install autosuggestion
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 echo "source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
