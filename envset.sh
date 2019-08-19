@@ -26,6 +26,7 @@ conda init zsh
 add-apt-repository ppa:neovim-ppa/stable
 apt-get update
 apt-get install -y neovim
+pip install neovim
 
 #envset
 git clone https://github.com/TPFRL/envset.git
