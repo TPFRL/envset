@@ -21,6 +21,11 @@ apt-get update
 apt-get install -y neovim
 pip install neovim
 
+#sshd
+apt-get install -y openssh-server net-tools
+sed -ri 's/#Port 22/Port 7777/g' /etc/ssh/sshd_config
+service ssh start
+
 #envset
 git clone https://github.com/TPFRL/envset.git
 cp envset/.tmux.conf ~/.tmux.conf
