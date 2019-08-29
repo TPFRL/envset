@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+#install 
+apt-get install -y tmux silversearcher-ag ctags
+
 #install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
@@ -16,6 +19,7 @@ echo "source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/
 conda init zsh
 
 #install neovim
+apt-get install -y software-properties-common 
 add-apt-repository ppa:neovim-ppa/stable
 apt-get update
 apt-get install -y neovim
