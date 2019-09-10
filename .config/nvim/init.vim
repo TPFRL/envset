@@ -14,7 +14,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/taglist.vim'
 Plug 'wesleyche/SrcExpl'
 Plug 'Chiel92/vim-autoformat'
-Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 Plug 'kien/ctrlp.vim'
 Plug 'tczengming/headerGatesAdd.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -173,9 +173,11 @@ let g:ale_cpp_gcc_options = "-std=c++14 -Wall -I~/tensorrt/samples/common -I/usr
 "let g:ale_cpp_parse_makefile = 1
 hi Search ctermbg=White ctermfg=Black
 
+"color관련
+let g:solarized_termcolors=256
+set t_Co=256
 set background=dark
-colorscheme gruvbox
-let g:gruvbox_contrast_dark="hard"
+colorscheme solarized
 
 "fzf관련
 nmap <C-p> :Files<Cr>
