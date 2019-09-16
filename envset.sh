@@ -25,9 +25,6 @@ apt-get update
 apt-get install -y neovim
 pip install neovim
 
-#sshd config. assume sshd is already made.
-sed -ri 's/#Port 22/Port 7777/g' /etc/ssh/sshd_config
-
 #envset
 cp .tmux.conf ~/.tmux.conf
 cp -r .config ~
