@@ -38,4 +38,4 @@ echo "alias confloc='./configure --prefix=${HOME}/.local'" >> ${ZDOTDIR:-$HOME}/
 echo "alias ca='conda activate'"  >> ${ZDOTDIR:-$HOME}/.zshrc
 echo "bindkey '^[[C' emacs-forward-word"  >> ${ZDOTDIR:-$HOME}/.zshrc
 echo "bindkey '^[[D' emacs-backward-word"  >> ${ZDOTDIR:-$HOME}/.zshrc
-echo "bindkey '^W' kill-word"  >> ${ZDOTDIR:-$HOME}/.zshrc
+echo "bindkey '^W' backward-kill-word"  >> ${ZDOTDIR:-$HOME}/.zshrc
