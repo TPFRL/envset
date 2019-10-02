@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #install tmux, etc.
-apt-get install -y tmux silversearcher-ag ctags
+apt-get install -y tmux silversearcher-ag ctags htop
 
 #install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -32,6 +32,9 @@ cp -r .config ~
 #Vim Plugins
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim +'PlugInstall --sync' +qa
+
+#Pip installation
+pip install gpustat
 
 #zshrc settings
 echo "alias confloc='./configure --prefix=${HOME}/.local'" >> ${ZDOTDIR:-$HOME}/.zshrc
