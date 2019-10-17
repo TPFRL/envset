@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #install tmux, etc.
-apt-get install -y tmux silversearcher-ag ctags htop
+apt-get install -y tmux silversearcher-ag ctags htop rsync
 
 #install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
