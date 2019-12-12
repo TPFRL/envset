@@ -14,8 +14,8 @@ wget -O ~/.vim/autoload/plug.vim \
 vim +'PlugInstall --sync' +qa
 
 #bashrc settings
-echo "alias confloc='./configure --prefix=${HOME}/.local'" >> ~/.bashrc
-echo "alias ca='conda activate'"  >> ~/.bashrc
-echo "bindkey '^[[C' emacs-forward-word"  >> ~/.bashrc
-echo "bindkey '^[[D' emacs-backward-word"  >> ~/.bashrc
-echo "bindkey '^W' backward-kill-word"  >> ~/.bashrc
+#echo "alias confloc='./configure --prefix=${HOME}/.local'" >> ~/.bashrc
+#echo "alias ca='conda activate'"  >> ~/.bashrc
+#echo "bindkey '^[[C' emacs-forward-word"  >> ~/.bashrc
+#echo "bindkey '^[[D' emacs-backward-word"  >> ~/.bashrc
+#echo "bindkey '^W' backward-kill-word"  >> ~/.bashrc
