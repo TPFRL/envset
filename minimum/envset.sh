@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 #install tmux, etc.
-apt-get install -y tmux ctags cmake
+sudo apt-get update && sudo apt-get install -y tmux ctags cmake build-essential
+
 
 #envset
 cp .tmux.conf ~/.tmux.conf
