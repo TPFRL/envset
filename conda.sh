@@ -2,6 +2,7 @@
 mkdir -p /tmp/unique_for_apex
 cd /tmp/unique_for_apex && git clone https://github.com/NVIDIA/apex.git
 
+source ~/.zshrc
 ########
 export CONDA_NAME=torch140
 conda update conda
