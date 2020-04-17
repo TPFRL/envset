@@ -3,6 +3,12 @@
 #install tmux, etc.
 apt-get install -y tmux silversearcher-ag ctags htop rsync
 
+#install jemalloc
+wget https://github.com/jemalloc/jemalloc/releases/download/5.2.1/jemalloc-5.2.1.tar.bz2
+tar xvjf jemalloc-5.2.1.tar.bz2
+cd jemalloc-5.2.1 && ./configure && make -j 16 && make install
+echo "alias usejm='LD_PRELOAD=/usr/local/lib/libjemalloc.so'"  >> ${ZDOTDIR:-$HOME}/.zshrc
+
 #install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
