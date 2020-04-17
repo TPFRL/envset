@@ -1,3 +1,9 @@
+# prepare to install apex
+WORKDIR /tmp/unique_for_apex
+# SHA is something the user can touch to force recreation of this Docker layer,
+# and therefore force cloning of the latest version of Apex
+RUN SHA=ToUcHMe git clone https://github.com/NVIDIA/apex.git
+
 ########
 export CONDA_NAME=torch140
 conda update conda
