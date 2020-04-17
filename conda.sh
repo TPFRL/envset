@@ -1,4 +1,5 @@
 # prepare to install apex
+mkdir -p /tmp/unique_for_apex
 cd /tmp/unique_for_apex && git clone https://github.com/NVIDIA/apex.git
 
 ########
