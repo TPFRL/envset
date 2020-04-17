@@ -18,7 +18,7 @@ cd /tmp/unique_for_apex/apex && pip install -v --no-cache-dir --global-option="-
 ########
 ARG CONDA_NAME=torch101
 conda create -n ${CONDA_NAME} pip python=3.6 && conda activate ${CONDA_NAME}
-conda install pytorch==1.0.1 torchvision==0.2.2 cudatoolkit=10.0
+conda install pytorch==1.0.1 torchvision==0.2.2 cudatoolkit=10.0 -c pytorch
 
 # Installing Apex. uninstall Apex if present, twice to make absolutely sure :)
 pip uninstall -y apex || :
