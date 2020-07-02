@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# zsh installation
+apt-get install -y zsh
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
 #install tmux, etc.
 apt-get install -y tmux silversearcher-ag ctags htop rsync
