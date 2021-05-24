@@ -28,20 +28,16 @@ echo "source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/
 conda init zsh
 conda init bash
 
-#install neovim
-apt-get install -y software-properties-common 
-add-apt-repository ppa:neovim-ppa/stable
-apt-get update
-apt-get install -y neovim
-pip install neovim
-
 #envset
 cp .tmux.conf ~/.tmux.conf
-cp -r .config ~
 
-#Vim Plugins
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-nvim +'PlugInstall --sync' +qa
+# fix cursor error
+apt-get install -y locales && \
+localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+
+echo "export LC_ALL=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
+echo "export LC_CTYPE=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
+echo "export LANG=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
 
 #Pip installation
 pip install gpustat
