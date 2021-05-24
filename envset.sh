@@ -29,7 +29,7 @@ conda init zsh
 conda init bash
 
 #envset
-cp .tmux.conf ~/.tmux.conf
+cp .tmux.conf ~/
 
 # fix cursor error
 apt-get install -y locales && \
