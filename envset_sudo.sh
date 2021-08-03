@@ -42,20 +42,20 @@ vim +'PlugInstall --sync' +qa
 conda init zsh
 conda init bash
 
-#install jemalloc
-wget https://github.com/jemalloc/jemalloc/releases/download/5.2.1/jemalloc-5.2.1.tar.bz2
-tar xvjf jemalloc-5.2.1.tar.bz2
-cd jemalloc-5.2.1 && ./configure && make -j 16 && sudo make install
-echo "alias usejm='LD_PRELOAD=/usr/local/lib/libjemalloc.so'"  >> ${ZDOTDIR:-$HOME}/.zshrc
+##install jemalloc
+#wget https://github.com/jemalloc/jemalloc/releases/download/5.2.1/jemalloc-5.2.1.tar.bz2
+#tar xvjf jemalloc-5.2.1.tar.bz2
+#cd jemalloc-5.2.1 && ./configure && make -j 16 && sudo make install
+#echo "alias usejm='LD_PRELOAD=/usr/local/lib/libjemalloc.so'"  >> ${ZDOTDIR:-$HOME}/.zshrc
+#
+## fix cursor error
+#sudo apt-get install -y locales && \
+#localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+#
+#echo "export PATH=/usr/local/cuda/bin:$PATH" >> ${ZDOTDIR:-$HOME}/.zshrc
+#echo "export LC_ALL=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
+#echo "export LC_CTYPE=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
+#echo "export LANG=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
 
-# fix cursor error
-sudo apt-get install -y locales && \
-localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
-
-echo "export PATH=/usr/local/cuda/bin:$PATH" >> ${ZDOTDIR:-$HOME}/.zshrc
-echo "export LC_ALL=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
-echo "export LC_CTYPE=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
-echo "export LANG=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
-
-#Pip installation
-pip install gpustat
+##Pip installation
+#pip install gpustat
