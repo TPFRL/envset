@@ -1,3 +1,5 @@
+echo "export PATH=/usr/local/cuda/bin:$PATH" >> ${ZDOTDIR:-$HOME}/.zshrc
+
 #!/usr/bin/env bash
 # zsh installation
 apt-get install -y zsh
@@ -34,8 +36,6 @@ cp .tmux.conf ~/
 # fix cursor error
 apt-get install -y locales && \
 localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
-
-echo "export PATH=/usr/local/cuda/bin:$PATH" >> ${ZDOTDIR:-$HOME}/.zshrc
 echo "export LC_ALL=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
 echo "export LC_CTYPE=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
 echo "export LANG=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
@@ -49,3 +49,12 @@ echo "alias ca='conda activate'"  >> ${ZDOTDIR:-$HOME}/.zshrc
 echo "bindkey '^[[C' emacs-forward-word"  >> ${ZDOTDIR:-$HOME}/.zshrc
 echo "bindkey '^[[D' emacs-backward-word"  >> ${ZDOTDIR:-$HOME}/.zshrc
 echo "bindkey '^W' backward-kill-word"  >> ${ZDOTDIR:-$HOME}/.zshrc
+
+# Avoid duplicates
+echo "HISTCONTROL=ignoredups:erasedups # Ubuntu default is ignoreboth"  >> ${ZDOTDIR:-$HOME}/.zshrc
+# When the shell exits, append to the history file instead of overwriting it
+echo "shopt -s histappend  # In Ubuntu this is already set by default"  >> ${ZDOTDIR:-$HOME}/.zshrc
+
+# After each command, append to the history file and reread it
+echo /PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"' >> ${ZDOTDIR:-$HOME}/.zshrc
+
