@@ -3,6 +3,8 @@
 sudo apt-get install -y zsh
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
+#echo "export PATH=/usr/local/cuda/bin:$PATH" >> ${ZDOTDIR:-$HOME}/.zshrc
+
 #install tmux, etc.
 sudo apt-get install -y tmux silversearcher-ag ctags htop rsync
 
@@ -28,6 +30,14 @@ echo "bindkey '^[[C' emacs-forward-word"  >> ${ZDOTDIR:-$HOME}/.zshrc
 echo "bindkey '^[[D' emacs-backward-word"  >> ${ZDOTDIR:-$HOME}/.zshrc
 echo "bindkey '^W' backward-kill-word"  >> ${ZDOTDIR:-$HOME}/.zshrc
 
+# https://askubuntu.com/questions/1352436/tmux-history-not-preserved
+# Avoid duplicates
+echo "HISTCONTROL=ignoredups:erasedups # Ubuntu default is ignoreboth"  >> ${ZDOTDIR:-$HOME}/.zshrc
+# When the shell exits, append to the history file instead of overwriting it
+echo "shopt -s histappend  # In Ubuntu this is already set by default"  >> ${ZDOTDIR:-$HOME}/.zshrc
+
+# After each command, append to the history file and reread it
+echo '/PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"' >> ${ZDOTDIR:-$HOME}/.zshrc
 
 cp minimum/.vimrc ~/.vimrc
 
@@ -52,7 +62,7 @@ conda init bash
 #sudo apt-get install -y locales && \
 #localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 #
-#echo "export PATH=/usr/local/cuda/bin:$PATH" >> ${ZDOTDIR:-$HOME}/.zshrc
+
 #echo "export LC_ALL=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
 #echo "export LC_CTYPE=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
 #echo "export LANG=en_US.UTF-8" >> ${ZDOTDIR:-$HOME}/.zshrc
