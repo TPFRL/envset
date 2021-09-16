@@ -4,6 +4,7 @@ sudo apt-get install -y zsh
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
 #echo "export PATH=/usr/local/cuda/bin:$PATH" >> ${ZDOTDIR:-$HOME}/.zshrc
+echo "export PATH=$HOME/.local/bin:$PATH" >> ${ZDOTDIR:-$HOME}/.zshrc
 
 #install tmux, etc.
 sudo apt-get install -y tmux silversearcher-ag ctags htop rsync
