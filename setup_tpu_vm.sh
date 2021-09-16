@@ -4,4 +4,3 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 chmod +x envset_sudo.sh && ./envset_sudo.sh
 
 pip install crcmod
-echo "export PATH=$HOME/.local/bin:$PATH" >> ${ZDOTDIR:-$HOME}/.zshrc
